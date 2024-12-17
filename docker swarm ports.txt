@@ -1,0 +1,12 @@
+Type	Protocol	Ports	Source
+Custom TCP Rule	TCP	2377	swarm + remote mgmt
+Custom TCP Rule	TCP	7946	swarm
+Custom UDP Rule	UDP	7946	swarm
+Custom UDP Rule	UDP	4789	swarm
+Custom Protocol	50	all	swarm
+Inbound to Swarm Workers
+Type	Protocol	Ports	Source
+Custom TCP Rule	TCP	7946	swarm
+Custom UDP Rule	UDP	7946	swarm
+Custom UDP Rule	UDP	4789	swarm
+Custom Protocol	50	all	swarm

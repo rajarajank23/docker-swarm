@@ -1,0 +1,22 @@
+# Start from the official Apache image
+FROM httpd:latest
+ 
+# Set environment variables, if needed
+ENV APACHE_LOG_DIR /var/log/apache2
+ 
+# Copy custom HTML or configuration files
+COPY ./public-html/ /usr/local/apache2/htdocs/         # Custom HTML files
+COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf # Custom Apache config
+ 
+# Expose the port that Apache will listen to
+EXPOSE 8000
+ 
+# Start Apache in the foreground
+CMD ["httpd-foreground"]
+
+
+
+
+Listen 8000
+ServerName localhost:8000
+DocumentRoot "/usr/local/apache2/htdocs"

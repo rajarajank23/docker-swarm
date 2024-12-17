@@ -1,0 +1,1 @@
+Send-MailMessage -SMTPServer localhost -To inframonitoringalerts@innovasolutions.com -From rajarajan.karunakaran@innovasolutions.com -Subject "This is a test email" -Body "Testmail"

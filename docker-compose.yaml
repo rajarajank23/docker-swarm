@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:apache # You can replace this with a custom PHP-Apache image
+    ports:
+      - "8000:80" # Maps port 80 on the host to port 80 in the container
+    deploy:
+      mode: replicated
+      replicas: 3 # Number of replicas you want
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    volumes:
+      -  /home/ubuntu/prod/html:/var/www/html # Mounts your PHP application code into the container
+volumes:
+  html:
+
+networks:
+  webnet:
+    driver: overlay
+

@@ -1,0 +1,14 @@
+Resources:
+  MyECSService:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: !Ref cleverstate
+      TaskDefinition: !Ref phpapachewebs
+      DesiredCount: 2
+      LaunchType: FARGATE  # or EC2, depending on your setup
+      DeploymentConfiguration:
+        DeploymentCircuitBreaker:
+          Enable: true
+          Rollback: true
+        MaximumPercent: 200
+        MinimumHealthyPercent: 50

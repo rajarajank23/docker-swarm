@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:apache
+    ports:
+      - "8000:80"
+    deploy:
+      mode: replicated
+      replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - html:/var/www/html
+
+volumes:
+  html: # This defines the named volume
+
+networks:
+  webnet:
+    driver: overlay
+

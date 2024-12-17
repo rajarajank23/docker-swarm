@@ -1,0 +1,8 @@
+# Use the official PHP image with Apache
+FROM php:apache
+
+# Copy local HTML files to the Apache document root in the container
+COPY ./html /var/www/html
+
+# Expose port 80
+EXPOSE 8080

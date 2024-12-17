@@ -1,0 +1,32 @@
+php -8001
+java -8002
+nodejs-8003
+
+info.php
+
+<?php
+
+phpinfo( );
+
+?>
+
+index.php
+
+<!DOCTYPE html>
+<html>
+<body>
+   <h1>My PHP Website</h1>
+   <?php
+      echo "Hello World!";
+   ?>
+</body>
+</html>
+
+docker service create --name my-node-service --replicas 3 --network some-net --mount type=volume,source=mydata,target=/app/data --publish 3000:3000 node:latest
+
+war file
+
+wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+
+
+https://stackoverflow.com/questions/5301776/directory-index-forbidden-by-options-directive
